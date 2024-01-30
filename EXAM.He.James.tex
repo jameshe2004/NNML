@@ -1,0 +1,222 @@
+\documentclass[10pt]{article} %
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumerate,url}
+
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{8in}
+
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\points}[1]{{\it (#1 Points)}}
+\newcommand{\tpoints}[1]{{\bf #1 Total points.}}
+
+\title{CSCI 420-01 -- Neural Networks Machine Learning\\
+Final Exam\\
+{\large{\bf Part II}}}
+\date{}
+\author{James He}
+
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item \textbf{What were our definitions of a priori knowledge and a posteriori knowledge?}
+
+Solution:
+\begin{enumerate}
+    \item Priori Knowledge: A priori knowledge is knowledge that exists independently of experience
+    \item Posteriori Knowledge: A posteriori knowledge is knowledge or "matters of fact" are types that requrie esperience or emperical evidence
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What is the basic premise of learning?}
+
+Solution: Using a  set of observations to uncover an underlying process
+\bigskip
+
+
+\item \textbf{What is the essence of machine learning?}
+
+Solution:
+\begin{enumerate}
+    \item A pattern exists
+    \item We cannot pin it down mathematically
+    \item We have data on it
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What are the components of learning?}
+
+Solution:
+\begin{enumerate}
+    \item Target Function
+    \item Data
+    \item Learning Algorithm
+    \item Hypothesis Set
+    \item Final Hypothesis
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What are the solution components that comprise a learning model?}
+
+Solution:
+\begin{enumerate}
+    \item The hypothesis set
+    \item The learning algorithm
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What is Hoeffding's Inequality and why is it important in machine learning?}
+
+Solution:
+\begin{enumerate}
+    \item Hoeffding's Inequality: $\mathbb{P}[|E_{in}(g) - E_{out}(g)| > \epsilon] \leq 2Me^{-2\epsilon^2N}$, $\epsilon > 0$
+    \item Importance:
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What is the (simple) mathematical expression for the generalization error?}
+
+Solution: $|E_{in}(g)-E_{out}(g)| \equiv generalization\ error$
+\bigskip
+
+
+\item \textbf{What is the VC dimension and why is it important in machine learning?}
+
+Solution: VC dimension $d_{vc}(H)$ - the most points $H$ can shatter
+\bigskip
+
+
+\item \textbf{What is the VC generalization bound and why is it "the most important mathematical result in the theory of learning"?}
+
+Solution: 
+\begin{enumerate}
+    \item VC generalization bound: $E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N}ln\frac{4m_{\mathcal{H}}(2N)}{\delta}}$
+    \item Importance: It is the most important mathematical result in the theory of learning because it is the first result that gives a bound on the generalization error of a learning algorithm in terms of the number of training examples and the complexity of the hypothesis set.
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What are the two questions of learning?}
+
+Solution:
+\begin{enumerate}
+    \item Can we ake sure the $E_{out}(g)$ is close enough to $E_{in}(g)$?
+    \item Can we make $E_{in}(g)$ small enough?
+\end{enumerate}
+\bigskip
+
+
+\item \textbf{What is overfitting?}
+
+Solution: Fitting hte data more than is wwarranted
+\bigskip
+
+
+\item \textbf{What are two methods we studied to deal with overfitting?}
+
+Solution: Regularization and Validation
+\bigskip
+
+
+\item \textbf{For each paper that you were responsible for reading, concisely describe the cost function and the optimization procedure they used to learn. (2 * 12 = 24 bullets)}
+
+Solution:
+\begin{enumerate}
+    \item \textbf{Visualizing and Understanding Convolutional Networks}
+    \begin{enumerate}
+        \item Cost Function: Cross-entropy loss
+        \item Optimization Procedure: Backpropagation with gradient descent
+    \end{enumerate}
+
+    \item \textbf{Mixture Density Networks}
+    \begin{enumerate}
+        \item Cost Function: Negative log-likelihood of a Gaussian mixture model
+        \item Optimization Procedure: Expectation-Maximization algorithm
+    \end{enumerate}
+
+    \item \textbf{A New Learning Algorithm for Stochastic Feedforward Neural Networks}
+    \begin{enumerate}
+        \item Cost Function: Mean squared error
+        \item Optimization Procedure: Stochastic gradient descent with momentum
+    \end{enumerate}
+
+    \item \textbf{Statistical Language Models Based on Neural Networks (Chap. 1-4)}
+    \begin{enumerate}
+        \item Cost Function: Cross-entropy loss
+        \item Optimization Procedure: Backpropagation through time (BPTT)
+    \end{enumerate}
+
+    \item \textbf{Efficient Estimation of Word Representations in Vector Space}
+    \begin{enumerate}
+        \item Cost Function: Negative sampling loss
+        \item Optimization Procedure: Stochastic gradient descent
+    \end{enumerate}
+
+    \item \textbf{Attention Is All You Need}
+    \begin{enumerate}
+        \item Cost Function: Cross-entropy loss
+        \item Optimization Procedure: Adam optimizer with learning rate scheduling
+    \end{enumerate}
+
+    \item \textbf{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}
+    \begin{enumerate}
+        \item Cost Function: masked language model loss and next sentence prediction loss
+        \item Optimization Procedure: Adam optimizer
+    \end{enumerate}
+
+    \item \textbf{Semi-Supervised Recursive Autoencoders for Predicting Sentiment Distributions}
+    \begin{enumerate}
+        \item Cost Function: Mean squared error
+        \item Optimization Procedure: Stochastic gradient descent
+    \end{enumerate}
+
+    \item \textbf{Deep Learning Code Fragments for Code Clone Detection}
+    \begin{enumerate}
+        \item Cost Function: Binary cross-entropy
+        \item Optimization Procedure: Gradient descent with regularization
+    \end{enumerate}
+
+    \item \textbf{Extracting and Composing Robust Features with Denoising Autoencoders}
+    \begin{enumerate}
+        \item Cost Function: Reconstruction error with sparsity constraint
+        \item Optimization Procedure: Stochastic gradient descent
+    \end{enumerate}
+
+    \item \textbf{Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders}
+    \begin{enumerate}
+        \item Cost Function: Maximum likelihood estimation
+        \item Optimization Procedure: Adam optimizer
+    \end{enumerate}
+
+    \item \textbf{beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework}
+    \begin{enumerate}
+        \item Cost Function: Reconstruction loss combined with KL divergence
+        \item Optimization Procedure: Stochastic gradient descent with annealing
+    \end{enumerate}
+
+    \item \textbf{Generative Adversarial Nets}
+    \begin{enumerate}
+        \item Cost Function: Minimax loss function
+        \item Optimization Procedure: Alternating gradient descent/ascent
+    \end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+
+\end{enumerate}
+
+\end{document}
